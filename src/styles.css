@@ -1,0 +1,87 @@
+* {
+  font-family: "Fredoka", sans-serif;
+}
+
+:root {
+  --gradient: linear-gradient(
+    45deg,
+    #7a0bc0,
+    #845ec2,
+    #d65db1,
+    #ff6f91,
+    #ff9671,
+    #ffc75f,
+    #f3ea65,
+    #a0f109,
+    #00fa85
+  );
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  background-image: var(--gradient);
+  background-size: 300%;
+  animation: changeBg 10s infinite;
+}
+
+.sketch {
+  background-image: var(--gradient);
+  background-size: 1000%;
+  animation: changeBg 10s infinite;
+}
+
+@keyframes changeBg {
+  0% {
+    background-position: left;
+  }
+  50% {
+    background-position: right;
+  }
+  100% {
+    background-position: left;
+  }
+}
+
+.slider {
+  width: 70vw;
+  opacity: 0.7;
+  -webkit-appearance: none;
+  -webkit-transition: 0.1s;
+  border-radius: 10%;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 13%;
+  background: #000000;
+  cursor: pointer;
+  box-shadow: -1000px 0 0 1000px #000000;
+}
+
+@media only screen and (max-width: 600px) {
+  .song-image {
+    width: 60vw;
+    height: 60vw;
+  }
+  .flexcontainer2 {
+    width: 0;
+    visibility: hidden;
+  }
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
